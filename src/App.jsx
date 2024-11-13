@@ -39,31 +39,32 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className="min-h-screen bg-gray-100 py-8">
-        <Container maxWidth="lg">
-          <Typography variant="h3" component="h1" align="center" gutterBottom>
-            Face Recognition Attendance System
-          </Typography>
-          <Typography variant="subtitle1" align="center" color="textSecondary" paragraph>
-            Quick and secure attendance tracking using facial recognition
-          </Typography>
+    // <ThemeProvider theme={theme}>
+    //   <div className="min-h-screen bg-gray-100 py-8">
+    //     <Container maxWidth="lg">
+    //       <Typography variant="h3" component="h1" align="center" gutterBottom>
+    //         Face Recognition Attendance System
+    //       </Typography>
+    //       <Typography variant="subtitle1" align="center" color="textSecondary" paragraph>
+    //         Quick and secure attendance tracking using facial recognition
+    //       </Typography>
 
-          <Grid container spacing={4} className="mt-4">
-            <Grid item xs={12} md={6}>
-              <WebcamCapture 
-                onAttendanceMarked={handleAttendanceMarked}
-                knownFaces={knownFaces}
-                onNewFaceAdded={handleNewFaceAdded}
-              />
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <AttendanceList records={attendanceRecords} />
-            </Grid>
-          </Grid>
-        </Container>
-      </div>
-    </ThemeProvider>
+    //       <Grid container spacing={4} className="mt-4">
+    //         <Grid item xs={12} md={6}>
+    //           <WebcamCapture 
+    //             onAttendanceMarked={handleAttendanceMarked}
+    //             knownFaces={knownFaces}
+    //             onNewFaceAdded={handleNewFaceAdded}
+    //           />
+    //         </Grid>
+    //         <Grid item xs={12} md={6}>
+    //           <AttendanceList records={attendanceRecords} />
+    //         </Grid>
+    //       </Grid>
+    //     </Container>
+    //   </div>
+    // </ThemeProvider>
+    <></>
   );
 }
 
