@@ -56,7 +56,7 @@ const WebcamCapture = ({ onAttendanceMarked, knownFaces, onNewFaceAdded }) => {
   const handleDetection = async () => {
     setIsDetecting(true);
     setError('');
-    
+
     try {
       const detections = await faceapi
         .detectAllFaces(videoRef.current, new faceapi.TinyFaceDetectorOptions())
@@ -76,7 +76,7 @@ const WebcamCapture = ({ onAttendanceMarked, knownFaces, onNewFaceAdded }) => {
       }
 
       const descriptor = detections[0].descriptor;
-      
+
       // Check if face is known
       let matchedFace = null;
       for (const knownFace of knownFaces) {
@@ -101,7 +101,7 @@ const WebcamCapture = ({ onAttendanceMarked, knownFaces, onNewFaceAdded }) => {
       setError('Face detection failed');
       console.error(err);
     }
-    
+
     setIsDetecting(false);
   };
 

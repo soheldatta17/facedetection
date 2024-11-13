@@ -18,30 +18,24 @@ function App() {
   const [attendanceRecords, setAttendanceRecords] = useState([]);
   const [knownFaces, setKnownFaces] = useState([]);
 
+  // Log attendanceRecords when it changes
   useEffect(() => {
-    // Load known faces from localStorage
-    const savedFaces = localStorage.getItem('knownFaces');
-    if (savedFaces) {
-      setKnownFaces(JSON.parse(savedFaces));
-    }
+    console.log('Attendance Records Updated:', attendanceRecords);
+  }, [attendanceRecords]);
 
-    // Load attendance records from localStorage
-    const savedRecords = localStorage.getItem('attendanceRecords');
-    if (savedRecords) {
-      setAttendanceRecords(JSON.parse(savedRecords));
-    }
-  }, []);
+  // Log knownFaces when it changes
+  useEffect(() => {
+    console.log('Known Faces Updated:', knownFaces);
+  }, [knownFaces]);
 
   const handleAttendanceMarked = (record) => {
     const newRecords = [record, ...attendanceRecords];
     setAttendanceRecords(newRecords);
-    localStorage.setItem('attendanceRecords', JSON.stringify(newRecords));
   };
 
   const handleNewFaceAdded = (newFace) => {
     const updatedFaces = [...knownFaces, newFace];
     setKnownFaces(updatedFaces);
-    localStorage.setItem('knownFaces', JSON.stringify(updatedFaces));
   };
 
   return (
